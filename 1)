@@ -1,0 +1,49 @@
+#include <stdio.h>
+int pal(int i)
+{
+    int k,K1,K2,k1,k2,k3,k4;
+    k=i*i;
+    if (k<100)
+    {
+        K1=k/10;
+        K2=k%10;
+        if (K1==K2)
+        {
+            printf("%d ",i);
+        }
+    }
+    if ((k>=100)&&(k<=999))
+    {
+        K1=k%10;
+        K2=k/100;
+        if (K1==K2)
+        {
+            printf("%d ",i);
+        }
+        
+    }
+    if ((k>=1000)&&(k<=9999))
+    {
+        K1=k/100;
+        K2=k%100;
+        k1=K1%10;
+        k2=K1/10;
+        k3=K2%10;
+        k4=K2/10;
+        if ((k1==k4)&&(k2==k3))
+        {
+            printf("%d ",i);
+        }
+        
+    }
+    
+}
+
+int main() 
+{
+    int i;
+    for (i=1;i<=100;i++)
+    {
+        pal(i);
+    }
+}
